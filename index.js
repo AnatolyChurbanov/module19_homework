@@ -1,4 +1,46 @@
-/* ЗАДАНИЕ С ФУНКЦИЕЙ-КОНСТРУКТОРОМ */
+/* ЗАДАНИЕ 1 */
+
+const obj = {
+  string: 'string',
+  six: 6,
+  123: '123',
+  obj1: { obj2: 'obj2' },
+}
+
+const ownProp = obj => {
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) console.log(key, obj[key])
+  }
+}
+ownProp(obj)
+
+/* ЗАДАНИЕ 2 */
+
+const object = {
+  string: 'string',
+  six: 6,
+  123: '123',
+  obj1: { obj2: 'obj2' },
+}
+
+const checkProp = (prop, obj) => {
+  if (prop in obj) return true
+  else return false
+}
+
+console.log(checkProp('string', obj))
+console.log(checkProp('str', obj))
+
+/* ЗАДАНИЕ 3 */
+
+const noProto = () => {
+  return Object.create(null)
+}
+
+console.log(noProto())
+
+
+/* ЗАДАНИЕ 4 */
 
   function Device(name, power) {
     this.name = name;
@@ -31,7 +73,7 @@
   tv.plugIn();
   console.log(laptop.getPowerUsed() + hairDryer.getPowerUsed() + tv.getPowerUsed());
 
-/* ЗАДАНИЕ С КЛАССАМИ */
+/* ЗАДАНИЕ 5 */
 
   class Device {
     constructor(name, power){
